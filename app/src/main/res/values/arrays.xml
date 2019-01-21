@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="meizi_classify_keys">
+        <item>All</item>
+        <item>DaXiong</item>
+        <item>QiaoTun</item>
+        <item>HeiSi</item>
+        <item>MeiTui</item>
+        <item>QingXin</item>
+        <item>ZaHui</item>
+    </string-array>
+
+    <string-array name="meizi_classify_values">
+        <item>所有</item>
+        <item>大胸</item>
+        <item>翘臀</item>
+        <item>黑丝</item>
+        <item>美腿</item>
+        <item>清新</item>
+        <item>杂烩</item>
+    </string-array>
+
+    <string-array name="main_tab_values">
+        <item>知乎</item>
+        <item>开眼</item>
+        <item>妹子</item>
+    </string-array>
+
+
+</resources>

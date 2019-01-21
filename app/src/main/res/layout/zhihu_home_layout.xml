@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:srlAccentColor="@android:color/white"
+        app:srlEnableFooterFollowWhenLoadFinished="true"
+        app:srlEnableFooterTranslationContent="false"
+        app:srlEnableHeaderTranslationContent="false"
+        app:srlEnableLoadMore="false"
+
+        app:srlPrimaryColor="@color/colorPrimary">
+
+        <com.scwang.smartrefresh.header.MaterialHeader
+            android:id="@+id/mMaterialHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.classic.common.MultipleStatusView
+            android:id="@+id/multipleStatusView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:emptyView="@layout/layout_empty_view"
+            app:errorView="@layout/layout_error_view"
+            app:loadingView="@layout/layout_loading_view"
+            app:noNetworkView="@layout/layout_network_view">
+
+            <android.support.design.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/topCoordinatorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/main_bg">
+
+                <android.support.design.widget.AppBarLayout
+                    android:id="@+id/appBarLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:fitsSystemWindows="true"
+                    android:theme="@style/AppTheme.AppBarOverlay">
+
+                    <android.support.design.widget.CollapsingToolbarLayout
+                        android:id="@+id/collapsingToolbarLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:contentScrim="@color/colorPrimaryDark"
+                        app:expandedTitleMarginBottom="16dp"
+                        app:expandedTitleMarginStart="24dp"
+                        app:expandedTitleTextAppearance="?android:attr/textAppearanceMedium"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                        <!--scroll|enterAlwaysCollapsed|enterAlways APPBar也会隐藏-->
+
+                        <com.bigkoo.convenientbanner.ConvenientBanner
+                            android:id="@+id/convenientBanner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fitsSystemWindows="true"
+                            android:scaleType="centerCrop"
+                            android:transitionName="banner"
+                            app:canLoop="true"
+                            app:layout_collapseMode="parallax"
+                            app:layout_collapseParallaxMultiplier="0.5" />
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_gravity="bottom"
+                            android:background="@color/book_title_mask" />
+
+                        <android.support.v7.widget.Toolbar
+                            android:id="@+id/toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="?android:attr/actionBarSize"
+                            android:minHeight="?android:attr/actionBarSize"
+                            app:layout_collapseMode="pin"
+                            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+                    </android.support.design.widget.CollapsingToolbarLayout>
+
+                </android.support.design.widget.AppBarLayout>
+
+                <!--<include layout="@layout/recycler_content" />-->
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    android:paddingBottom="54dp"
+                    android:scrollbarStyle="outsideOverlay"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/ic_menu_ebook"
+                    android:visibility="gone"
+                    app:borderWidth="0dp"
+                    app:layout_anchor="@id/appBarLayout"
+                    app:layout_anchorGravity="bottom|right" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab_bot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginBottom="70dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@mipmap/up"
+                    android:visibility="gone"
+                    app:borderWidth="0dp"
+                    app:elevation="5dp"
+                    app:pressedTranslationZ="3dp" />
+
+            </android.support.design.widget.CoordinatorLayout>
+
+        </com.classic.common.MultipleStatusView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</RelativeLayout>
+

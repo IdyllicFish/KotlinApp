@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KotlinApp</string>
+    <string name="zhihu_daily">知乎日报</string>
+    <string name="get_news_error">获取日报失败</string>
+    <string name="girl">妹子</string>
+    <string name="get_giel_error">获取妹子失败</string>
+</resources>

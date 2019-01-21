@@ -1,0 +1,77 @@
+apply plugin: 'com.android.library'
+
+//apply plugin: 'com.novoda.bintray-release'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions' //扩展插件
+
+apply plugin: 'kotlin-kapt'  //kapt3插件
+
+android {
+    compileSdkVersion 26
+
+
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            postprocessing {
+                removeUnusedCode false
+                removeUnusedResources false
+                obfuscate false
+                optimizeCode false
+                proguardFile 'proguard-rules.pro'
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    //Logger
+    implementation 'com.orhanobut:logger:2.1.1'
+    //rx
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.5'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.2'
+    //https://github.com/qyxxjd/MultipleStatusView
+    implementation 'com.classic.common:multiple-status-view:1.4'
+}
+
+//publish {
+//    userOrg = 'yuanshine'//bintray.com用户名
+//    repoName = 'MyMaven'//远程仓库名字,不指明，默认是上传到maven
+//    groupId = 'com.yuanshine'//jcenter上的路径
+//    artifactId = 'KotlinMvp'//项目名称
+//    publishVersion = '1.0.0'//版本号
+//    desc = ''//描述，不重要
+//    website = ''//网站，最好有，不重要
+//}
+//
+//tasks.withType(Javadoc) {//防止编码问题
+//    options.addStringOption('Xdoclint:none', '-quiet')
+//    options.addStringOption('encoding', 'UTF-8')
+//    options.addStringOption('charSet', 'UTF-8')
+//}

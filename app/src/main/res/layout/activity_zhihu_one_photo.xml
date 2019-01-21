@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000">
+
+    <uk.co.senab.photoview.PhotoView
+        android:id="@+id/one_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:transitionName="head" />
+
+    <!--加载中的小图-->
+    <ImageView
+        android:id="@+id/one_small_img_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+
+    <ProgressBar
+        android:id="@+id/one_loading"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center" />
+
+
+</FrameLayout>

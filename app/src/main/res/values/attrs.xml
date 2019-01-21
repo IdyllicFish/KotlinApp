@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SmoothCheckBox">
+        <attr name="duration" format="integer"/>
+        <attr name="stroke_width" format="dimension"/>
+        <attr name="color_tick" format="color"/>
+        <attr name="color_checked" format="color"/>
+        <attr name="color_unchecked" format="color"/>
+        <attr name="color_unchecked_stroke" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="SwitchButton">
+        <attr name="sb_shadow_radius" format="reference|dimension"/>
+        <attr name="sb_shadow_offset" format="reference|dimension"/>
+        <attr name="sb_shadow_color" format="reference|color"/>
+        <attr name="sb_uncheck_color" format="reference|color"/>
+        <attr name="sb_checked_color" format="reference|color"/>
+
+        <attr name="sb_border_width" format="reference|dimension"/>
+        <attr name="sb_checkline_color" format="reference|color"/>
+        <attr name="sb_checkline_width" format="reference|dimension"/>
+        <attr name="sb_uncheckcircle_color" format="reference|color"/>
+        <attr name="sb_uncheckcircle_width" format="reference|dimension"/>
+        <attr name="sb_uncheckcircle_radius" format="reference|dimension"/>
+
+        <attr name="sb_checked" format="reference|boolean"/>
+        <attr name="sb_shadow_effect" format="reference|boolean"/>
+        <attr name="sb_effect_duration" format="reference|integer"/>
+        <attr name="sb_button_color" format="reference|color"/>
+        <attr name="sb_show_indicator" format="reference|boolean"/>
+        <attr name="sb_background" format="reference|color"/>
+        <attr name="sb_enable_effect" format="reference|boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="ShimmerFrameLayout">
+        <attr name="auto_start" format="boolean"/>
+        <attr name="base_alpha" format="float"/>
+        <attr name="sh_duration" format="integer"/>
+        <attr name="repeat_count" format="integer"/>
+        <attr name="repeat_delay" format="integer"/>
+        <attr name="repeat_mode" format="enum">
+            <enum name="restart" value="1"/>
+            <enum name="reverse" value="2"/>
+        </attr>
+        <attr name="angle" format="enum">
+            <enum name="cw_0" value="0"/>
+            <enum name="cw_90" value="90"/>
+            <enum name="cw_180" value="180"/>
+            <enum name="cw_270" value="270"/>
+        </attr>
+        <attr name="dropoff" format="float"/>
+        <attr name="fixed_width" format="dimension"/>
+        <attr name="fixed_height" format="dimension"/>
+        <attr name="intensity" format="float"/>
+        <attr name="relative_width" format="float"/>
+        <attr name="relative_height" format="float"/>
+        <attr name="shape" format="enum">
+            <enum name="linear" value="0"/>
+            <enum name="radial" value="1"/>
+        </attr>
+        <attr name="tilt" format="float"/>
+    </declare-styleable>
+</resources>

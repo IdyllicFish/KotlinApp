@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions' //扩展插件
+
+apply plugin: 'kotlin-kapt'  //kapt3插件
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        renderscriptSupportModeEnabled true
+        applicationId "com.zhixin.kotlinapp"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    // 自定义输出配置
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "kotlinApp_v${variant.versionName}_${variant.name}.apk"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    //https://github.com/qyxxjd/MultipleStatusView
+    implementation 'com.classic.common:multiple-status-view:1.4'
+    //leakCanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    //Logger
+    implementation 'com.orhanobut:logger:2.1.1'
+    // 底部菜单
+    implementation('com.flyco.tablayout:FlycoTabLayout_Lib:2.1.0@aar') {
+        exclude group: 'com.android.support', module: 'support-v4'
+    }
+    //模糊透明 View
+    implementation 'com.github.mmin18:realtimeblurview:1.1.0'
+    //rx
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.5'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.2'
+    implementation 'com.bigkoo:convenientbanner:2.0.5'
+    implementation project(':kotlinmvp')
+    implementation project(':photoviewpager')
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-5'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-5'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+}

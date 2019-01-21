@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/comment_rfl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.classic.common.MultipleStatusView
+            android:id="@+id/zhihu_comment_statusview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:emptyView="@layout/layout_empty_view"
+            app:errorView="@layout/layout_error_view"
+            app:loadingView="@layout/layout_loading_zhihu_detail_view"
+            app:noNetworkView="@layout/layout_network_view">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/zhihu_comment_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+        </com.classic.common.MultipleStatusView>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.v4.widget.SwipeRefreshLayout>
+
